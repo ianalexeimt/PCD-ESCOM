@@ -46,3 +46,30 @@ def validar_factura (codigo):
             return True
     return False
 
+def validar_codigo (codigo):
+    tipo=detectar_tipo(codigo)
+    if tipo == 'producto':
+        return tipo,validar_producto(codigo)
+    if tipo == 'envio':
+        return tipo,validar_envio(codigo)
+    if tipo == 'empleado':
+        return tipo,validar_empleado(codigo)
+    if tipo == 'factura':
+        return tipo,validar_factura(codigo)
+    return 'desconocido',False
+
+def main():
+    print('codigo,tipo,valido')
+    for linea in sys.stdin:
+        codigo=linea.strip()
+        if not codigo:
+            continue
+        tipo,es_valido=validar_codigo(codigo)
+        if es_valido:
+            status='VALIDO'
+        else:
+            status='INVALIDO'
+        print(f"{codigo},{tipo},{status}")
+
+if __name__ == '__main__':
+    main()

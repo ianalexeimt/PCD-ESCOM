@@ -1,4 +1,4 @@
-#  Reto Semana 9: Sistema de Gestión de Calificaciones
+#  Reto Semana 11: Sistema de Gestión de Calificaciones
 
 **Materia:** Programación para Ciencia de Datos (IPN)
 
